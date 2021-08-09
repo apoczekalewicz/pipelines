@@ -3,9 +3,11 @@
 Prep cluster:
 
 #1 - project:
+
 oc create project demo-pipelines
 
 #2 - service account (for buildah, s2i etc.):
+
 oc create sa pipeline
 oc adm policy add-scc-to-user privileged -z pipeline
 oc adm policy add-role-to-user edit -z pipeline
