@@ -1,0 +1,16 @@
+apiVersion: triggers.tekton.dev/v1alpha1
+kind: TriggerBinding
+metadata:
+  name: rebuild
+spec:
+  params:
+  - name: git-url
+    value: $(body.repository.clone_url)
+  - name: REVISION
+    value: $(body.pull_request.head.sha)
+  - name: NAMESPACE
+    value: demo-pipelines
+  - name: deployment-name
+    value: vote-ui 
+  - name: SERVICE_ACCOUNT
+    value: pipeline

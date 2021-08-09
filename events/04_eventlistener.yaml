@@ -1,0 +1,12 @@
+apiVersion: triggers.tekton.dev/v1alpha1
+kind: EventListener
+metadata:
+  name: event
+spec:
+  serviceAccountName: eventsa
+  triggers:
+  - name: rebuild
+    template:
+      name: rebuild
+    bindings:
+      - ref: rebuild

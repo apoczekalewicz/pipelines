@@ -1,15 +1,15 @@
 apiVersion: tekton.dev/v1beta1
 kind: PipelineRun
 metadata:
-  generateName: mypipeline-api-
+  generateName: mypipeline-ui-
 spec:
   params:
   - name: IMAGE
-    value: image-registry.openshift-image-registry.svc:5000/demo-pipelines/vote-api
+    value: image-registry.openshift-image-registry.svc:5000/demo-pipelines/vote-ui
   - name: deployment-name
-    value: pipelines-vote-api
+    value: vote-ui
   - name: git-url
-    value: https://github.com/apoczekalewicz/pipelines-vote-api
+    value: https://github.com/apoczekalewicz/pipelines-vote-ui/
   pipelineRef:
     name: build-and-deploy
   serviceAccountName: pipeline

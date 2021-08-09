@@ -1,0 +1,12 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  labels:
+    eventlistener: event
+  name: event
+spec:
+  port:
+    targetPort: http-listener
+  to:
+    kind: Service
+    name: el-event
