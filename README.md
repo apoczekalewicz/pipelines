@@ -54,6 +54,7 @@ oc create -f https://raw.githubusercontent.com/apoczekalewicz/pipelines/master/t
 Notes:
 - We are using here shared-workspace with PVC to share some information between Tasks
 - We are using here 2 application repos:
+
 https://github.com/apoczekalewicz/pipelines-vote-api.git
 
 https://github.com/apoczekalewicz/pipelines-vote-ui.git
