@@ -44,6 +44,13 @@ tkn pipeline start build-and-deploy -w name=shared-workspace,claimName=source-pv
 
 tkn pipeline start build-and-deploy -w name=shared-workspace,claimName=source-pvc -p deployment-name=vote-ui -p git-url=https://github.com/apoczekalewicz/pipelines-vote-ui/ -p IMAGE=image-registry.openshift-image-registry.svc:5000/$(oc project -q)/vote-ui --showlog
 
+or 
+
+oc create -f https://raw.githubusercontent.com/apoczekalewicz/pipelines/master/tests/vote-api-pipelinerun.yaml
+
+oc create -f https://raw.githubusercontent.com/apoczekalewicz/pipelines/master/tests/vote-ui-pipelinerun.yaml
+
+
 Notes:
 - We are using here shared-workspace with PVC to share some information between Tasks
 - We are using here 2 application repos:
