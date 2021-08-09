@@ -47,7 +47,11 @@ tkn pipeline start build-and-deploy -w name=shared-workspace,claimName=source-pv
 Notes:
 - We are using here shared-workspace with PVC to share some information between Tasks
 - We are using here 2 application repos:
-https://github.com/apoczekalewicz/pipelines-vote-api.git
-https://github.com/apoczekalewicz/pipelines-vote-ui/
+-- https://github.com/apoczekalewicz/pipelines-vote-api.git
+-- https://github.com/apoczekalewicz/pipelines-vote-ui/
 
-
+Tasks:
+- fetch-repository (git-clone from ClusterTasks)
+- build-image (buildah from ClusterTasks)
+- apply-manifests (custom)
+- update-deployment (custom)
