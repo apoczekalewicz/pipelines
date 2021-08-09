@@ -38,9 +38,9 @@ oc apply -f https://raw.githubusercontent.com/apoczekalewicz/pipelines/master/pi
 
 #6 - Start pipeline - for vote-api and vote-ui:
 
-tkn pipeline start build-and-deploy -w name=shared-workspace,claimName=source-pvc -p deployment-name=pipelines-vote-api -p git-url=https://github.com/apoczekalewicz/pipelines-vote-api.git -p IMAGE=image-registry.openshift-image-registry.svc:5000/`oc project -q`/vote-api --showlog
+tkn pipeline start build-and-deploy -w name=shared-workspace,claimName=source-pvc -p deployment-name=pipelines-vote-api -p git-url=https://github.com/apoczekalewicz/pipelines-vote-api.git -p IMAGE=image-registry.openshift-image-registry.svc:5000/$(oc project -q)/vote-api --showlog
 
-tkn pipeline start build-and-deploy -w name=shared-workspace,claimName=source-pvc -p deployment-name=vote-ui -p git-url=https://github.com/apoczekalewicz/pipelines-vote-ui/ -p IMAGE=image-registry.openshift-image-registry.svc:5000/`oc project -q`/vote-ui --showlog
+tkn pipeline start build-and-deploy -w name=shared-workspace,claimName=source-pvc -p deployment-name=vote-ui -p git-url=https://github.com/apoczekalewicz/pipelines-vote-ui/ -p IMAGE=image-registry.openshift-image-registry.svc:5000/$(oc project -q)/vote-ui --showlog
 
 Notes:
 - We are using here shared-workspace with PVC to share some information between Tasks
