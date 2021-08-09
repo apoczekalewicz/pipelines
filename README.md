@@ -4,7 +4,7 @@ Prep cluster:
 
 #1 - project:
 
-oc create project demo-pipelines
+oc new-project demo-pipelines
 
 #2 - service account (for buildah, s2i etc.):
 
