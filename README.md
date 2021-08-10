@@ -69,7 +69,7 @@ Tasks:
 
 -----
 
-Extras:
+Extras (events):
 
 oc create -f https://raw.githubusercontent.com/apoczekalewicz/pipelines/master/events/01_serviceaccount.yaml
 
