@@ -65,3 +65,20 @@ Tasks:
 - build-image (buildah from ClusterTasks)
 - apply-manifests (custom)
 - update-deployment (custom)
+
+
+-----
+
+Extras:
+
+oc create -f https://raw.githubusercontent.com/apoczekalewicz/pipelines/master/events/01_serviceaccount.yaml
+
+oc create -f https://raw.githubusercontent.com/apoczekalewicz/pipelines/master/events/02_triggertemplate.yaml
+
+oc create -f https://raw.githubusercontent.com/apoczekalewicz/pipelines/master/events/03_triggerbinding.yaml
+
+oc create -f https://raw.githubusercontent.com/apoczekalewicz/pipelines/master/events/04_eventlistener.yaml
+
+oc create -f https://raw.githubusercontent.com/apoczekalewicz/pipelines/master/events/05_route.yaml
+
+curl.sh :)
